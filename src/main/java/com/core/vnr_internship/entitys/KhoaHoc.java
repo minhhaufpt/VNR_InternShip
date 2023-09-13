@@ -1,5 +1,6 @@
 package com.core.vnr_internship.entitys;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class KhoaHoc  implements Serializable {
     Integer id;
     @Column(name = "tenkhoahoc")
     String tenKhoaHoc;
+    @JsonIgnore
     @OneToMany(mappedBy = "khoahoc")
     List<MonHoc> monHoc;
 }
